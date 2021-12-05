@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Day1_2
+namespace Utils
 {
 	public static class LinqExtensions
 	{
