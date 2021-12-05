@@ -3,11 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day1-1", "Day1-1\Day1-1.csproj", "{94D91578-E08B-4F91-BAEE-8A5B562D8611}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day1-1", "Day1-1\Day1-1.csproj", "{94D91578-E08B-4F91-BAEE-8A5B562D8611}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day1-2", "Day1-2\Day1-2.csproj", "{7109531E-B910-43F6-B4F4-1F6C7AEA1B8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day1-2", "Day1-2\Day1-2.csproj", "{7109531E-B910-43F6-B4F4-1F6C7AEA1B8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day2-1", "Day2-1\Day2-1.csproj", "{B2E764E4-805C-4733-95BE-F007CB08868E}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Utils", "Utils\Utils.shproj", "{536A02A5-1FF3-4AB7-9808-0977236078B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day2-2", "Day2-2\Day2-2.csproj", "{21776F37-2803-4F65-8505-B58712993757}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Utils\Utils.projitems*{536a02a5-1ff3-4ab7-9808-0977236078b6}*SharedItemsImports = 13
+		Utils\Utils.projitems*{7109531e-b910-43f6-b4f4-1f6c7aea1b8f}*SharedItemsImports = 5
+		Utils\Utils.projitems*{94d91578-e08b-4f91-baee-8a5b562d8611}*SharedItemsImports = 5
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -21,6 +32,14 @@ Global
 		{7109531E-B910-43F6-B4F4-1F6C7AEA1B8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7109531E-B910-43F6-B4F4-1F6C7AEA1B8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7109531E-B910-43F6-B4F4-1F6C7AEA1B8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2E764E4-805C-4733-95BE-F007CB08868E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2E764E4-805C-4733-95BE-F007CB08868E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2E764E4-805C-4733-95BE-F007CB08868E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2E764E4-805C-4733-95BE-F007CB08868E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21776F37-2803-4F65-8505-B58712993757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21776F37-2803-4F65-8505-B58712993757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21776F37-2803-4F65-8505-B58712993757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21776F37-2803-4F65-8505-B58712993757}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
