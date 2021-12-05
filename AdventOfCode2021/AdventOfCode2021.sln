@@ -13,6 +13,10 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Utils", "Utils\Utils.shproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day2-2", "Day2-2\Day2-2.csproj", "{21776F37-2803-4F65-8505-B58712993757}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3-1", "Day3-1\Day3-1.csproj", "{1CD75C8B-E0D6-4CCE-ACD6-6FACC457D495}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3-2", "Day3-2\Day3-2.csproj", "{9D4CDCD8-4E4E-4212-9A04-BD8D0A7CDC47}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Utils\Utils.projitems*{536a02a5-1ff3-4ab7-9808-0977236078b6}*SharedItemsImports = 13
@@ -40,6 +44,14 @@ Global
 		{21776F37-2803-4F65-8505-B58712993757}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21776F37-2803-4F65-8505-B58712993757}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21776F37-2803-4F65-8505-B58712993757}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CD75C8B-E0D6-4CCE-ACD6-6FACC457D495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CD75C8B-E0D6-4CCE-ACD6-6FACC457D495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CD75C8B-E0D6-4CCE-ACD6-6FACC457D495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CD75C8B-E0D6-4CCE-ACD6-6FACC457D495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D4CDCD8-4E4E-4212-9A04-BD8D0A7CDC47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D4CDCD8-4E4E-4212-9A04-BD8D0A7CDC47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D4CDCD8-4E4E-4212-9A04-BD8D0A7CDC47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D4CDCD8-4E4E-4212-9A04-BD8D0A7CDC47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
