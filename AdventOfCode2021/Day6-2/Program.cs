@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Threading.Tasks;
 
 namespace Day6_2
@@ -16,37 +20,78 @@ namespace Day6_2
 							.Select(g => new EquivalentFishes(g.Key, g.Count()))
 							.ToList();
 
-			for (int a = 1; a <= 256; a++)
-			{
-				var newFishes = fishes.Select(f => f.Replicate())
-									.Where(f => f is not null)
-									.ToList();
+			var sw = new Stopwatch();
+			sw.Start();
 
-				if (newFishes.Any())
-					fishes.Add(new EquivalentFishes(8, newFishes.Select(f => f.NumFishes).Sum()));
+			for (int a = 1; a <= 400000; a++)
+			{
+				try
+				{
+					var numNewFishes = fishes.Select(f => f.Replicate())
+											.Where(f => f is not null)
+											.Select(f => f.Value)
+											.ToList();
+
+					if (numNewFishes.Any())
+						fishes.Add(new EquivalentFishes(8, Sum(numNewFishes)));
+
+					if (fishes.Count > 1000)
+					{
+						fishes = GarbageCollection();
+						//Console.WriteLine("Gen {0}: {1}", a, fishes.Count);
+					}
+				}
+				catch (InvalidOperationException ex)
+				{
+					Console.WriteLine(ex.Message);
+					Console.WriteLine("    at gen {0}", a);
+					return;
+				}
 			}
 
-			Console.WriteLine("How many lanternfish would there be after 256 days?");
-			Console.WriteLine(fishes.Select(f => f.NumFishes).Sum());
+			sw.Stop();
+
+			Console.WriteLine("How many lanternfish would there be after 400000 days?");
+			Console.WriteLine(Sum(fishes.Select(f => f.NumFishes)));
+			Console.WriteLine();
+			Console.WriteLine("Took {0}s", sw.ElapsedMilliseconds / 1000.0);
+
+			List<EquivalentFishes> GarbageCollection()
+			{
+				return fishes.GroupBy(f => f.TimeTilReplication)
+							.Select(g => new EquivalentFishes(g.Key, Sum(g.Select(f => f.NumFishes))))
+							.ToList();
+			}
+
+			static BigInteger Sum(IEnumerable<BigInteger> source)
+			{
+				BigInteger result = 0;
+				foreach (var num in source)
+				{
+					result += num;
+				}
+
+				return result;
+			}
 		}
 
 		public class EquivalentFishes
 		{
-			public long NumFishes { get; private set; }
+			public BigInteger NumFishes { get; private set; }
 			public int TimeTilReplication { get; private set; }
 
-			public EquivalentFishes(int timeTilReplication, long numFishes)
+			public EquivalentFishes(int timeTilReplication, BigInteger numFishes)
 			{
 				this.TimeTilReplication = timeTilReplication;
 				this.NumFishes = numFishes;
 			}
 
-			public EquivalentFishes Replicate()
+			public BigInteger? Replicate()
 			{
 				if (TimeTilReplication == 0)
 				{
 					TimeTilReplication = 6;
-					return new EquivalentFishes(8, NumFishes);
+					return NumFishes;
 				}
 
 				TimeTilReplication--;
