@@ -16,6 +16,8 @@ namespace Day6_2
 							.Select(g => new EquivalentFishes(g.Key, g.Count()))
 							.ToList();
 
+			// you can find a multiple magnitude faster version in the feature/400000-gens-day6 branch
+
 			for (int a = 1; a <= 256; a++)
 			{
 				var newFishes = fishes.Select(f => f.Replicate())
